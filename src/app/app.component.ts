@@ -23,15 +23,16 @@ export class AppComponent {
     ]
   };
 
-  gettingData(event) {
-    this.state.todos = event;
-    console.log(this.state.todos);
-  }
+  addTodo = todo => {
+    this.state.todos.push(todo);
+    // tslint:disable-next-line: semicolon
+  };
 
-  // addTodo = todo => {
-  //   console.log('gh', todo);
-  //   this.state.todos.push(todo);
-  //   // this.state.todos = [...this.state.todos, todo];
-  //   // console.log(this.state.todos);
-  // };
+  deleteTodo = id => {
+    const tempTodos = this.state.todos.filter(todo => {
+      return todo.id !== id;
+    });
+    this.state.todos = tempTodos;
+    // tslint:disable-next-line: semicolon
+  };
 }

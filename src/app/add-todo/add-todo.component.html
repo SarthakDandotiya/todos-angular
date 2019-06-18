@@ -2,9 +2,10 @@
   <input
     type="text"
     name="data"
-    (ngModel)="(pseudoState.data)"
-    required
+    placeholder="Type Something..."
+    [(ngModel)]="tempData"
     autocomplete="off"
+    required
   />
   <button>Add</button>
 </form>

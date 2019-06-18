@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -7,13 +7,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./add-todo.component.css']
 })
 export class AddTodoComponent implements OnInit {
-  @Input() sendData: any;
-  @Output() returnData = new EventEmitter();
+  @Input() addTodo: any;
 
-  pseudoState = {
-    id: null,
-    data: null
-  };
+  tempData = '';
 
   constructor() {}
 
@@ -37,16 +33,12 @@ export class AddTodoComponent implements OnInit {
       .replace(/[^a-z]+/g, '')
       .substr(0, 5);
 
-    // this.pseudoState.id = creation + extention;
-    // this.pseudoState.data = f.value.data;
-    console.log(this.sendData);
-    this.sendData.push({ id: creation + extention, data: f.value.data });
-    console.log(this.sendData);
-    this.returnData.emit(this.sendData);
+    this.addTodo({
+      id: creation + extention,
+      data: this.tempData
+    });
 
-    // this.addTodo(this.pseudoState);
-
-    console.log('success');
+    console.log(this.tempData);
 
     f.resetForm();
   }

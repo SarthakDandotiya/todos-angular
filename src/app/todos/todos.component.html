@@ -2,5 +2,5 @@
 <div *ngFor="let t of todos" class="todo">
   <p>{{ t.id }}</p>
   <p>{{ t.data }}</p>
-  <button>Delete</button>
+  <button (click)="deleteTodo(t.id)">Delete</button>
 </div>

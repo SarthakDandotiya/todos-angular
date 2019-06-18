@@ -1,8 +1,5 @@
 <h1>{{ title }}</h1>
-<app-add-todo
-  (returnData)="gettingData($event)"
-  [sendData]="state.todos"
-></app-add-todo>
-<app-todos [todos]="state.todos"></app-todos>
+<app-add-todo [addTodo]="addTodo"></app-add-todo>
+<app-todos [todos]="state.todos" [deleteTodo]="deleteTodo"></app-todos>
 
 <router-outlet></router-outlet>
