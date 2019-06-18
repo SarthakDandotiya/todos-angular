@@ -1,0 +1,10 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" ngNativeValidate>
+  <input
+    type="text"
+    name="data"
+    (ngModel)="(pseudoState.data)"
+    required
+    autocomplete="off"
+  />
+  <button>Add</button>
+</form>
