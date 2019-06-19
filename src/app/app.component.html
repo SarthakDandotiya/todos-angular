@@ -1,5 +1,7 @@
 <h1>{{ title }}</h1>
-<app-add-todo [addTodo]="addTodo"></app-add-todo>
-<app-todos [todos]="state.todos" [deleteTodo]="deleteTodo"></app-todos>
+<div class="app">
+  <app-add-todo [addTodo]="addTodo"></app-add-todo>
+  <app-todos [todos]="state.todos" [handleDelete]="deleteTodo"></app-todos>
+</div>
 
 <router-outlet></router-outlet>

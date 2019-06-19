@@ -1,6 +1,17 @@
-<!-- <p>{{ todos[1].data }}</p> -->
-<div *ngFor="let t of todos" class="todo">
-  <p>{{ t.id }}</p>
-  <p>{{ t.data }}</p>
-  <button (click)="deleteTodo(t.id)">Delete</button>
+<div *ngIf="checkData()">
+  <div *ngFor="let t of todos" class="todo">
+    <!-- <p>{{ t.id }}</p> -->
+    <p>{{ t.data }}</p>
+    <button (click)="deleter(t.id)" type="button">
+      Delete
+    </button>
+  </div>
 </div>
+<div *ngIf="checkData() == false" class="no-todos">
+  <p>You've got Nothing to do...</p>
+  <h5>Add todos.</h5>
+</div>
+<!-- <ng-template #notods>
+  <p>You've got Nothing to do...</p>
+  <h5>Add todos.</h5>
+</ng-template> -->

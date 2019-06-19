@@ -1,0 +1,37 @@
+/* .todos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.todo {
+  margin: 8px;
+  padding: 8px;
+  background: #ebebeb;
+  white-space: wrap;
+  word-wrap: break-word;
+}
+
+.todo button {
+  font-size: 0.8rem;
+  border-radius: 0;
+  outline: none;
+  border: none;
+  background-color: #e74747;
+  color: white;
+  padding: 2px 4px;
+  margin-top: 8px;
+}
+
+.todo button:active {
+  background-color: #be1f1f;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+.no-todos {
+  margin: 8px;
+}

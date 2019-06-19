@@ -38,7 +38,7 @@ export class AddTodoComponent implements OnInit {
       data: this.tempData
     });
 
-    console.log(this.tempData);
+    // console.log(this.tempData);
 
     f.resetForm();
   }

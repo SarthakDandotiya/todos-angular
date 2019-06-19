@@ -7,9 +7,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TodosComponent implements OnInit {
   @Input() todos: any;
-  @Input() deleteTodo: any;
+  @Input() handleDelete: any;
+  // exist = true;
 
   constructor() {}
 
   ngOnInit() {}
+
+  checkData() {
+    if (this.todos.length > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  deleter = i => {
+    this.handleDelete(i);
+    // tslint:disable-next-line: semicolon
+  };
 }
